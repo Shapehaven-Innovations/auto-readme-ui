@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auto-README UI</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 800px;
+        margin: 2rem auto;
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+        font-family: monospace;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5rem;
+        text-align: left;
+      }
+      button {
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Auto-README Dashboard</h1>
+
+    <section>
+      <h2>Mode A: Scan Repos</h2>
+      <button id="scanBtn">Scan Organization</button>
+      <table id="statusTable">
+        <thead>
+          <tr>
+            <th>Repository</th>
+            <th>Has README?</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Mode B: Generate README</h2>
+      <textarea id="codeArea" placeholder="Paste your code here…"></textarea
+      ><br />
+      <label>
+        <input type="checkbox" id="commitChk" />
+        Commit to repo
+      </label>
+      <select id="repoSelect">
+        <option value="">— Select repo —</option>
+      </select>
+      <br />
+      <button id="genBtn">Generate README</button>
+      <pre id="preview" style="background: #f9f9f9; padding: 1rem"></pre>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
